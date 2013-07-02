@@ -1,4 +1,5 @@
 GladioApp::Application.routes.draw do
+  get "questions/new"
   get "static_pages/home"
   get "static_pages/new"
   get "static_pages/about"
