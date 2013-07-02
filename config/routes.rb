@@ -1,6 +1,6 @@
 GladioApp::Application.routes.draw do
   get "questions/new"
-  root to: 'static_pages#home'
+  root 'static_pages#home'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/blog', to: 'static_pages#blog', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
