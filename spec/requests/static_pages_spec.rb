@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "Static pages" do
   
   subject { page }
+  let(:base_title) { "Gladio" }
 
   describe "About page" do
     before { visit about_path}
@@ -10,7 +11,7 @@ describe "Static pages" do
     it { should have_content('About Us') }
 
     it "should have the title 'About Us'" do
-      expect(page).to have_title("Gladio | About Us")
+      expect(page).to have_title("#{base_title} | About Us")
     end
   end
 
@@ -20,7 +21,7 @@ describe "Static pages" do
     it { should have_content('Gladio Blog') }
 
     it "should have the title 'Blog'" do
-      expect(page).to have_title("Gladio | Blog")
+      expect(page).to have_title("#{base_title} | Blog")
     end
   end
 
@@ -30,7 +31,7 @@ describe "Static pages" do
     it { should have_content('Contact') }
 
     it "should have the title 'Contact Us'" do
-      expect(page).to have_title("Gladio | Contact Us")
+      expect(page).to have_title("#{base_title} | Contact Us")
     end
   end
 
@@ -40,7 +41,7 @@ describe "Static pages" do
     it { should have_content('Help') }
 
     it "should have the title 'Help'" do
-      expect(page).to have_title("Gladio | Help")
+      expect(page).to have_title("#{base_title} | Help")
     end
   end
 
@@ -50,7 +51,7 @@ describe "Static pages" do
     it { should have_content('Gladio App') }
 
     it "should have the title 'Home'" do
-      expect(page).to have_title("Gladio | Home")
+      expect(page).to have_title("#{base_title} | Home")
     end
   end
 
@@ -60,7 +61,7 @@ describe "Static pages" do
     it { should have_content('New') }
 
     it "should have the title 'New'" do
-      expect(page).to have_title("Gladio | New")
+      expect(page).to have_title("#{base_title} | New")
     end
   end
 end
