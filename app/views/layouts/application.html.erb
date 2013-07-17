@@ -10,6 +10,9 @@
 </head>
 <body>
 	<%= render 'layouts/header' %>
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+  <% end %>
   <div class="container-fluid">
     <div class="row-fluid">
       <%= render 'layouts/sidebar' %>
@@ -23,7 +26,9 @@
     </div><!--/row-->
   </div>
 	<div class="container">
+    <!--<%= yield %> This should be here according to the Michael Hartl Tutorial-->
     <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </div>
 </body>
 </html>
