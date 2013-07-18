@@ -7,21 +7,20 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
+  <%= render 'layouts/sidebar' %>
+  <%= render 'layouts/header' %>
 </head>
 <body>
-	<%= render 'layouts/header' %>
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
   <% end %>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row-fluid">
-      <%= render 'layouts/sidebar' %>
-      <div class="span9">
+      <div class="span16">
         <div class="hero-unit">
           <%= yield %>
-          <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
         </div>
-        <%= render 'layouts/grid_items' %>
+          <!-- Grid items were removed here -->
       </div><!--/span-->
     </div><!--/row-->
   </div>

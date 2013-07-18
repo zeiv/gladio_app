@@ -10,10 +10,34 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
+/* header */
+
+header {
+  padding: 35px 0px 50px 0px;
+  margin: 0px 0px 20px 0px;
+  border-top-style:none;
+  border-right-style:none;
+  border-left-style:none;
+  border-bottom-style:solid;
+  font-weight: normal;
+  color: #000000;
+  letter-spacing: 2pt;
+  word-spacing: 5pt;
+  font-size: 71px;
+  text-align: center;
+  font-family: times new roman, times, serif;
+  line-height: 0;
+}
+
 /* sidebar */
 
 .sidebar-nav {
-  padding: 9px 0;
+  padding: 9px 0px;
+  padding-bottom: 400px;
+  width: 220px;
+  min-height: 1px;
+  margin-left: 0px;
+  position: absolute;
 }
 
 /* footer */
