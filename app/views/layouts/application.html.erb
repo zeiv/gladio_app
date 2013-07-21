@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", media: "all",
-                                            "data-turbolinks-track" => true %>
+  <title>
+    <%= full_title(yield(:title)) %>
+  </title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!-- Take care of older versions of Internet Explorer -->
   <%= render 'layouts/shim' %>
-  <%= render 'layouts/sidebar' %>
-  <%= render 'layouts/header' %>
 </head>
 <body>
-  <% flash.each do |key, value| %>
+  <!-- Begin Sidebar-->
+  <%= render 'layouts/sidebar' %>
+  <!-- End Sidebar -->
+  <!-- Begin Header -->
+  <%= render 'layouts/header' %>
+  <!-- End Header -->
+  <div class="container">
+    <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
   <% end %>
-  <div class="container">
     <div class="row-fluid">
       <div class="span16">
         <div class="hero-unit">
+          <!-- Toggles hide/show functionality for the sidebar-->
+          <button>Toggle</button>
+          <br>
           <%= yield %>
-        </div>
-          <!-- Grid items were removed here -->
+        </div><!--/hero-unit-->
+        <!-- Grid items were removed here -->
       </div><!--/span-->
     </div><!--/row-->
-  </div>
+  </div><!--/container-->
+  <!-- Begin Footer -->
 	<div class="container">
-    <!--<%= yield %> This should be here according to the Michael Hartl Tutorial-->
     <%= render 'layouts/footer' %>
+    <!-- If in development environment, render debug information here -->
     <%= debug(params) if Rails.env.development? %>
   </div>
+  <!-- End Footer -->
 </body>
 </html>

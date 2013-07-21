@@ -1,46 +1,44 @@
+/* Includes everything from Twitter Bootstrap */
 @import "bootstrap";
 
-/* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
+/* Mixins, Variables, Etc. */
 
+/* Used to style boxes of forms and debug information. */
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* header */
+/* Header */
 
+/* Current styling for "The Sword" header at the top */
 header {
-  padding: 35px 0px 50px 0px;
-  margin: 0px 0px 20px 0px;
-  border-top-style:none;
-  border-right-style:none;
-  border-left-style:none;
-  border-bottom-style:solid;
-  font-weight: normal;
-  color: #000000;
+  font-family: times new roman, times, serif;
+  font-size: 71px;
   letter-spacing: 2pt;
   word-spacing: 5pt;
-  font-size: 71px;
-  text-align: center;
-  font-family: times new roman, times, serif;
   line-height: 0;
+  text-align: center;
+  padding: 35px 0px 50px 0px; /* Padding around the words */
+  margin: 0px 0px 20px 0px; /* Only a bottom margin to separate from the content */
+  border-bottom-style:solid; /* Apply a border only to the bottom */
 }
 
-/* sidebar */
+/* Sidebar */
 
+/* Position of sidebar is fixed and has 0 margin left to ensures a northwest location.  */
 .sidebar-nav {
   padding: 9px 0px;
   padding-bottom: 400px;
   width: 220px;
   min-height: 1px;
   margin-left: 0px;
-  position: absolute;
+  position: fixed;
 }
 
-/* footer */
+/* Footer */
 
 footer {
   margin-top: 45px;
@@ -71,17 +69,7 @@ footer ul li {
   margin-left: 10px;
 }
 
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-
-/* forms */
+/* Forms */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -106,4 +94,14 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+/* Miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }
