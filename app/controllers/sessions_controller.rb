@@ -10,8 +10,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # Located in the app's helpers folder.
       sign_in user
-      # After a successful login, the user is taken to their page.
-      redirect_to user
+      # After a successful login, the user is taken to their previously requested page
+      # or their personal page.
+      redirect_back_or user
     else
       # Flashes the error message on only this page.
       flash.now[:error] = 'Invalid email/password combination'
