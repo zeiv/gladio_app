@@ -2,7 +2,14 @@
   <ul class="nav nav-list">
     <li class="nav-header">Guide</li>
     <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "New", new_path %></li>
+    <% if signed_in? %>
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to "Settings", '#' %></li>
+        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+    <% else %>
+        <li><%= link_to "Sign in", signin_path %></li>
+        <li><%= link_to "Sign up", signup_path %></li>
+    <% end %>
     <li class="nav-header">Morality</li>
     <li><a href="#">Abortion</a></li>
     <li><a href="#">Death Penalty</a></li>

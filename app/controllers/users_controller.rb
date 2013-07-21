@@ -9,8 +9,11 @@ class UsersController < ApplicationController
   end
 
   def create
+    # User variable is equal to the attempted created user with submitted parameters.
     @user = User.new(user_params)
+    # If user successfully saves, sign in the user, flash success, and redirect to their personal user page. Else just send them back.
     if @user.save
+      sign_in @user
       flash[:success] = "Welcome to Gladio!"
       redirect_to @user
     else
